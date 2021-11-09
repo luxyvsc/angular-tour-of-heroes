@@ -1,17 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Hero, HeroUniverse } from '../hero';
+import { HeroService } from '../hero.service';
 import { Location } from '@angular/common';
 
-import { Hero } from '../hero';
-import { HeroService } from '../hero.service';
-
 @Component({
-  selector: 'app-hero-detail',
-  templateUrl: './hero-detail.component.html',
-  styleUrls: [ './hero-detail.component.scss' ]
+  selector: 'app-hero-edit',
+  templateUrl: './hero-edit.component.html',
+  styleUrls: ['./hero-edit.component.scss']
 })
-export class HeroDetailComponent implements OnInit {
+export class HeroEditComponent implements OnInit {
+
   hero: Hero | undefined;
+  heroUniverse: Array<HeroUniverse> = [HeroUniverse.DC, HeroUniverse.MARVEL];
 
   constructor(
     private route: ActivatedRoute,
@@ -39,4 +40,5 @@ export class HeroDetailComponent implements OnInit {
   goBack(): void {
     this.location.back();
   }
+
 }
