@@ -12,16 +12,18 @@
 }
 
 .btn {
+  font-weight: bold;
   width: 40px;
-  margin: 3px 0 0 10px;
-  background-color: #85C1E9;
-  border: 1px solid #000;
-  border-radius: 5px;
+  margin: 3px 0 10px 10px;
+  background-color: #E5E8E8;
+  border-radius: 2px;
+  border: 1px solid #F2F4F4;
   cursor: pointer;
+
 }
 
 .btn:hover {
-  background-color: #1A5276;
+  background-color: #D7DBDD;
 }
 
 .heroes li:hover {

@@ -4,25 +4,26 @@
   <mat-form-field class="full-width" appearance="fill">
     <label for="hero-name">Hero name </label>
     <input  matInput placeholder="Hero name" [(ngModel)]="hero.name">
-  </mat-form-field>
+  </mat-form-field><br>
 
-  <div class="full-width" id="default" appearance="fill">
+  <mat-form-field class="full-width" appearance="fill">
     <label  for="hero-description">Hero Description </label><br/>
     <input matInput id="hero-description"[(ngModel)]="hero.description" placeholder="Hero Description"/>
-  </div>
+  </mat-form-field><br>
 
-  <div id="default" class="full-width" appearance="fill">
+  <mat-form-field class="full-width" appearance="fill">
     <label for="hero-image-url">Hero image url: </label><br/>
     <input matInput id="hero-image-url" [(ngModel)]="hero.imageUrl" placeholder="Hero Image"/>
-  </div>
+  </mat-form-field><br>
 
-  <div id="default">
+  <div>
     <select [(ngModel)]="hero.universe">
       <option *ngFor="let universe of heroUniverse" [value]="universe">
         {{universe | uppercase}}
       </option>
     </select>
   </div>
+
 
   <button id="default" mat-raised-button color="primary" (click)="goBack()">go back</button>
   <button id="default" mat-raised-button color="primary" (click)="save()">save</button>
