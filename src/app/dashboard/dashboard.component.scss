@@ -4,6 +4,12 @@ h2 {
   text-align: center;
 }
 
+.example-card {
+  max-width: 177px;
+  margin-right: 10px;
+  margin-bottom: 8px;
+}
+
 .heroes-menu {
   padding: 0;
   margin: auto;
@@ -19,13 +25,14 @@ h2 {
 }
 
 a {
-  background-color: #3f525c;
-  border-radius: 2px;
+  background-color: #FBFCFC  ;
+  border-radius: 5px;
+  border: 1px solid #F2F3F4;
   padding: 1rem;
-  font-size: 1.2rem;
+  font-size: 1rem;
   text-decoration: none;
   display: inline-block;
-  color: #fff;
+  color: #000;
   text-align: center;
   width: 100%;
   min-width: 70px;
@@ -46,5 +53,5 @@ a {
 }
 
 a:hover {
-  background-color: #000;
+  background-color: #F2F3F4;
 }
