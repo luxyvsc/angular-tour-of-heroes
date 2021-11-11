@@ -1,6 +1,6 @@
-<div *ngIf="hero">
+<div id="all" *ngIf="hero">
   <h2>{{hero.name | uppercase}} Details</h2>
-  <div><span>id: </span>{{hero.id}}</div>
+  <div id="id"><span>id: </span>{{hero.id}}</div>
   <button (click)="goBack()">go back</button>
   <button [routerLink]="['/edit', hero.id]">edit</button>
 </div>
