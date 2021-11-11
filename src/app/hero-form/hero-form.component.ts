@@ -10,7 +10,7 @@ import { HeroService } from '../hero.service';
 })
 export class HeroFormComponent implements OnInit{
 
-  @Input() hero: Hero;
+  @Input() hero: Hero = {} as Hero;
 
   @Output() heroSaved: EventEmitter<void> = new EventEmitter<void>();
 
@@ -20,7 +20,6 @@ export class HeroFormComponent implements OnInit{
 
   constructor(
     private HeroService: HeroService,
-    private location: Location
   ) { }
   ngOnInit(): void {
     throw new Error('Method not implemented.');
