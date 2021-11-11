@@ -1,0 +1,37 @@
+<div *ngIf="hero">
+  <h2 id="heroName">{{hero.name | uppercase}} - <span>id: </span>{{hero.id}}</h2>
+
+  <h3>Hero name</h3>
+  <mat-form-field class="full-width" appearance="fill">
+    <label for="hero-name"></label>
+    <input  matInput placeholder="Hero name" [(ngModel)]="hero.name">
+  </mat-form-field><br>
+
+  <h3>Description</h3>
+  <mat-form-field class="full-width" appearance="fill">
+    <label  for="hero-description"></label><br/>
+    <input matInput id="hero-description"[(ngModel)]="hero.description" placeholder="Hero Description"/>
+  </mat-form-field><br>
+
+  <h3>Imagem</h3>
+  <mat-form-field class="full-width" appearance="fill">
+    <label for="hero-image-url"></label><br/>
+    <input matInput id="hero-image-url" [(ngModel)]="hero.imageUrl" placeholder="Hero Image"/>
+  </mat-form-field><br>
+
+  <h3>Universe</h3>
+  <div>
+    <select [(ngModel)]="hero.universe">
+      <option *ngFor="let universe of heroUniverse" [value]="universe">
+        {{universe | uppercase}}
+      </option>
+    </select>
+  </div>
+
+
+  <button id="default" mat-raised-button color="primary" (click)="onGoBack()">go back</button>
+  <button id="default" mat-raised-button color="primary" (click)="save()">save</button>
+</div>
+
+
+

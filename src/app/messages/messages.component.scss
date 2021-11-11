@@ -5,15 +5,21 @@ h2 {
   font-weight: lighter;
 }
 
+.messages {
+  text-align: center;
+}
+
 .clear {
-  color: #333;
-  background-color: #eee;
+  color: #000;
+  border: 1px solid #F2F3F4;
+  background-color: #FBFCFC  ;
   margin-bottom: 12px;
   padding: 1rem;
   border-radius: 4px;
   font-size: 1rem;
+  cursor: pointer;
 }
 .clear:hover {
-  color: white;
-  background-color: #42545C;
+  color: #000;
+  background-color: #F2F3F4;
 }

@@ -3,9 +3,18 @@
 .heroes {
   margin: 0 0 2em 0;
   list-style-type: none;
-  padding: 0;
-  width: 15em;
+  width: 100%;
 }
+
+#btn {
+  float: right;
+}
+
+body{
+  width: 1000px;
+  margin: auto 0;
+}
+
 .heroes li {
   position: relative;
   cursor: pointer;
@@ -15,15 +24,18 @@
   font-weight: bold;
   width: 40px;
   margin: 3px 0 10px 10px;
-  background-color: #E5E8E8;
+  background-color: #E6B0AA ;
   border-radius: 2px;
-  border: 1px solid #F2F4F4;
+  border: 3px solid #F2F4F4;
   cursor: pointer;
-
 }
 
 .btn:hover {
-  background-color: #D7DBDD;
+  background-color: #E59866;
+}
+
+#btnAdd{
+  float: right;
 }
 
 .heroes li:hover {

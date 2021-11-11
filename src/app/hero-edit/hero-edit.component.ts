@@ -11,7 +11,7 @@ import { Location } from '@angular/common';
 })
 export class HeroEditComponent implements OnInit {
 
-  hero: Hero | undefined;
+  hero: Hero = {} as Hero;
   heroUniverse: Array<HeroUniverse> = [HeroUniverse.DC, HeroUniverse.MARVEL];
 
   constructor(
@@ -25,20 +25,20 @@ export class HeroEditComponent implements OnInit {
   }
 
   save(): void {
-    if (this.hero) {
-      this.heroService.updateHero(this.hero)
-        .subscribe(() => this.goBack());
-    }
-  }
-
-  getHero(): void {
-    const id = Number(this.route.snapshot.paramMap.get('id'));
-    this.heroService.getHero(id)
-      .subscribe(hero => this.hero = hero);
+    this.goBack()
   }
 
   goBack(): void {
     this.location.back();
   }
+
+  getHero(): void {
+    const id = Number(this.route.snapshot.paramMap.get('id'));
+    console.log(id);
+    this.heroService.getHero(id)
+      .subscribe(hero => this.hero = hero);
+  }
+
+
 
 }

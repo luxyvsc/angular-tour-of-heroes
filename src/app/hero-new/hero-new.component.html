@@ -1,7 +1,6 @@
 <app-hero-form *ngIf="hero"
   [hero]="hero"
-  (heroSaved)="save()"
-  (goBack)="goBack()"
->
+  (heroSaved)="onSave()"
+  (goBack)="onGoBack()">
 
 </app-hero-form>

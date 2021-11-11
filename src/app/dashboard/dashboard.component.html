@@ -1,4 +1,6 @@
 <h2>Top Heroes</h2>
+<app-hero-search></app-hero-search>
+
 <div class="heroes-menu example-card">
   <a *ngFor="let hero of heroes"
       routerLink="/detail/{{hero.id}}">
@@ -8,6 +10,3 @@
   </a>
 
 </div>
-
-
-<app-hero-search></app-hero-search>
