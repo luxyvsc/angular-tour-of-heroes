@@ -1,4 +1,5 @@
 import { Component, Input, EventEmitter, OnInit, Output } from '@angular/core';
+import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
 
 import { Hero, HeroUniverse } from '../hero';
 import { HeroService } from '../hero.service';
@@ -18,11 +19,21 @@ export class HeroFormComponent implements OnInit{
 
   heroUniverse: Array<HeroUniverse> = [HeroUniverse.DC, HeroUniverse.MARVEL];
 
+  formGroup!: FormGroup;
+
   constructor(
-    private HeroService: HeroService,
+    private heroService: HeroService,
+    private formBuilder: FormBuilder
   ) { }
-  ngOnInit(): void {
-    throw new Error('Method not implemented.');
+
+  ngOnInit() {
+    this.formGroup = this.formBuilder.group({
+      name: [this.hero.name, [Validators.required, Validators.minLength(3), Validators.maxLength(30)]] ,
+      description: [this.hero.description, [Validators.minLength(3)]],
+      imageUrl: [this.hero.imageUrl, [Validators.required, ]],
+      id: [this.hero.id],
+      universe: [this.hero.universe]
+    });
   }
 
   onGoBack(): void {
@@ -30,11 +41,12 @@ export class HeroFormComponent implements OnInit{
   }
 
   save(): void {
+    let hero: Hero = this.formGroup.value;
     if (this.hero.id) {
-      this.HeroService.updateHero(this.hero)
+      this.heroService.updateHero(this.hero)
           .subscribe(() => this.heroSaved.emit());
     }else {
-      this.HeroService.addHero(this.hero)
+      this.heroService.addHero(hero)
           .subscribe(() => this.heroSaved.emit())
     }
   }

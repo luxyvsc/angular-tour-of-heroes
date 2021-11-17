@@ -5,3 +5,21 @@ input {
   border: 1px solid #ECF0F1;
   background-color: #F8F9F9;
 }
+
+.search-result {
+  width: 96.4%;
+  background-color: #F8F9F9;
+  border: 1px solid #ECF0F1;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.search-result:hover {
+  background-color: #F2F3F4;
+}
+
+ul li a {
+  text-decoration: none;
+  color: #000;
+
+}

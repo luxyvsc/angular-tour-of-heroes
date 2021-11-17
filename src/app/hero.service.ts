@@ -44,6 +44,7 @@ export class HeroService {
 
 
   updateHero(hero: Hero): Observable<any> {
+    console.log(hero);
     return this.http.put(this.heroesUrl, hero, this.httpOptions).pipe(
       tap(_ => this.log(`updated hero id=${hero.id}`)),
       catchError(this.handleError<any>('updateHero'))

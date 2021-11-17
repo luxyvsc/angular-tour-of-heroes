@@ -1,36 +1,38 @@
 <div id="all" *ngIf="hero">
-  <h2 class="hero" id="heroName">{{hero.name | uppercase}} - <span id="id">id: </span>{{hero.id}}</h2>
+  <form [formGroup]="formGroup" >
+    <h2 class="hero" id="heroName">{{hero.name | uppercase}} - <span id="id">id: </span>{{hero.id}}</h2>
 
-  <h3>Hero name</h3>
-  <mat-form-field class="full-width" appearance="fill">
-    <label for="hero-name"></label>
-    <input  matInput placeholder="Hero name" [(ngModel)]="hero.name">
-  </mat-form-field><br>
+    <h3>Hero name</h3>
+    <mat-form-field class="full-width" appearance="fill">
+      <label for="hero-name"></label>
+      <input  matInput placeholder="Hero name" formControlName="name">
+    </mat-form-field><br>
 
-  <h3>Description</h3>
-  <mat-form-field class="full-width" appearance="fill">
-    <label  for="hero-description"></label><br/>
-    <input matInput id="hero-description"[(ngModel)]="hero.description" placeholder="Hero Description"/>
-  </mat-form-field><br>
+    <h3>Description</h3>
+    <mat-form-field class="full-width" appearance="fill">
+      <label  for="hero-description"></label><br/>
+      <input matInput id="hero-description" placeholder="Hero Description" formControlName="description"/>
+    </mat-form-field><br>
 
-  <h3>Imagem</h3>
-  <mat-form-field class="full-width" appearance="fill">
-    <label for="hero-image-url"></label><br/>
-    <input matInput id="hero-image-url" [(ngModel)]="hero.imageUrl" placeholder="Hero Image"/>
-  </mat-form-field><br>
+    <h3>Imagem</h3>
+    <mat-form-field class="full-width" appearance="fill">
+      <label for="hero-image-url"></label><br/>
+      <input matInput id="hero-image-url"  placeholder="Hero Image" formControlName="imageUrl"/>
+    </mat-form-field><br>
 
-  <h3>Universe</h3>
-  <div>
-    <select [(ngModel)]="hero.universe">
-      <option *ngFor="let universe of heroUniverse" [value]="universe">
-        {{universe | uppercase}}
-      </option>
-    </select>
-  </div>
+    <h3>Universe</h3>
+    <div>
+      <select formControlName="universe">
+        <option *ngFor="let universe of heroUniverse" [value]="universe">
+          {{universe | uppercase}}
+        </option>
+      </select>
+    </div>
 
 
-  <button id="default" mat-raised-button color="primary" (click)="onGoBack()">go back</button>
-  <button id="default" mat-raised-button color="primary" (click)="save()">save</button>
+    <button id="default" mat-raised-button color="primary" type="button"   (click)="onGoBack()">go back</button>
+    <button id="default" mat-raised-button color="primary" type="submit" [disabled]="!formGroup.valid" (click)="save()">save</button>
+  </form>
 </div>
 
 

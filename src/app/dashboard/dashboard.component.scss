@@ -10,6 +10,10 @@ h2 {
   margin-bottom: 8px;
 }
 
+a:hover {
+  bottom: 0.6em;
+}
+
 .heroes-menu {
   padding: 0;
   margin: auto;
@@ -38,6 +42,7 @@ a {
   min-width: 70px;
   margin: .5rem auto;
   box-sizing: border-box;
+  position: relative;
 
   /* flexbox */
   order: 0;

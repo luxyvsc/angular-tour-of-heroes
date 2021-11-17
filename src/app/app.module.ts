@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormBuilder, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './in-memory-data.service';
@@ -37,7 +37,8 @@ import { HeroFormComponent } from './hero-form/hero-form.component';
     MatSelectModule,
     MatCardModule,
     MatButtonModule,
-    MatIconModule
+    MatIconModule,
+    ReactiveFormsModule
   ],
   declarations: [
     AppComponent,
@@ -52,6 +53,9 @@ import { HeroFormComponent } from './hero-form/hero-form.component';
   ],
   exports: [
 
+  ],
+  providers: [
+    FormBuilder
   ],
   bootstrap: [ AppComponent ]
 })
